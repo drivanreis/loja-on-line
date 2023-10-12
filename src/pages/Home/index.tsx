@@ -5,22 +5,17 @@ import CategoriesListSidebar from '../../components/CategoriesListSidebar';
 import CardsList from '../../components/CardsList';
 
 import { getProductsFromCategoryAndQuery } from '../../services/api';
-import { ProductType } from '../../types';
+import { TipodeProduto } from '../../types';
 
-// Tipo para os produtos retornados pela pesquisa
-type ProductSearchType = {
-  id: string;
-  title: string;
-  thumbnail: string;
-  price: number;
-};
+import { TipodePesquisadeProduto } from '../../types';
+
 
 function Home() {
   // Obtém os parâmetros da URL usando react-router
   const { category, query } = useParams();
   
   // Estado para armazenar os produtos
-  const [products, setProducts] = useState<ProductType[]>();
+  const [products, setProducts] = useState<TipodeProduto[]>();
 
   // Função para buscar os produtos com base na categoria e consulta
   const searchProducts = async () => {
@@ -36,24 +31,26 @@ function Home() {
       title: name,
       thumbnail: image,
       price,
-    }: ProductSearchType) => ({ productID, name, image, price }));
+    }: TipodePesquisadeProduto) => ({ productID, name, image, price }));
 
     // Atualiza o estado com os produtos encontrados
     setProducts(productsSearch);
   };
-
+  
+  // Requisito 02 - Inicio
   // Mensagem inicial quando nenhum termo de pesquisa foi inserido
-  const initialMessage = (
+  const msgInicial = (
     <p data-testid="home-initial-message">
       Digite algum termo de pesquisa ou escolha uma categoria.
     </p>
   );
+  // Requisito 02 - Fim
 
   // Mensagem para exibir quando nenhum produto foi encontrado
-  const notFoundMessage = <p>Nenhum produto encontrado</p>;
+  const msgNadaEncontrado = <p>Nenhum produto encontrado</p>;
 
   // Determina qual mensagem exibir com base na categoria
-  const message = category ? notFoundMessage : initialMessage;
+  const message = category ? msgNadaEncontrado : msgInicial;
 
   // Efeito que chama a função de pesquisa quando a categoria ou consulta muda
   useEffect(() => {

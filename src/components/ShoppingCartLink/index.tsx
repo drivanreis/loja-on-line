@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './style.css'
 
 // Componente que representa um link para a página do carrinho de compras
 function ShoppingCartLink() {

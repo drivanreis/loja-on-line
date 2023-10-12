@@ -5,14 +5,14 @@ import ProductCard from '../../components/ProductCard';
 
 import { getProductById } from '../../services/api';
 
-import { ProductType } from '../../types';
+import { TipodeProduto } from '../../types';
 
 function ProductDetails() {
   // Obtém o parâmetro 'id' da URL usando react-router
   const { id: productIdParam } = useParams();
 
   // Estado para armazenar os detalhes do produto
-  const [product, setProduct] = useState<ProductType>();
+  const [product, setProduct] = useState<TipodeProduto>();
 
   // Função para buscar os detalhes do produto por ID
   const requestProductDetails = async () => {

@@ -1,9 +1,11 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import { CategoryType } from '../../types';
+import { TipodeCategoria } from '../../types';
+
+import './style.css'
 
 // Props esperadas pelo componente CategoryItem
 type CategoryItemProps = {
-  category: CategoryType;
+  category: TipodeCategoria;
   setSelectedCategoryId: (categoryID: string) => void;
 };
 
@@ -27,7 +29,7 @@ function CategoryItem({ category, setSelectedCategoryId }: CategoryItemProps) {
   };
 
   return (
-    <li>
+    <li className='itemCategoria'>
       {/* Input de tipo rádio para seleção da categoria */}
       <input
         type="radio"

@@ -5,6 +5,8 @@ import SearchBar from '../SearchBar';
 import Logo from '../Logo';
 import ShoppingCartLink from '../ShoppingCartLink';
 
+import './style.css'
+
 // O componente Layout define a estrutura básica da página
 function Layout() {
   return (

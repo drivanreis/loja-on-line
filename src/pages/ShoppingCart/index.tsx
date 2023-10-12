@@ -1,17 +1,18 @@
+// Reguisito 3
 import React, { useEffect, useState, useContext } from 'react';
 
-import { CartProductType } from '../../types';
+import { TipodeCartaoProduto } from '../../types';
 
-import ShoppingCartContext from '../../contexts/ShoppingCartContext';
+import ContestoLoja from '../../contexts/ShoppingCartContext';
 
 import ProductCartCard from '../../components/ProductCartCard';
 
 function ShoppingCart() {
   // Obtém a função getShoppingCartList do contexto ShoppingCartContext
-  const { getShoppingCartList } = useContext(ShoppingCartContext);
+  const { getShoppingCartList } = useContext(ContestoLoja);
 
   // Estado para armazenar os produtos no carrinho
-  const [cartProducts, setCartProducts] = useState<CartProductType[]>([]);
+  const [cartProducts, setCartProducts] = useState<TipodeCartaoProduto[]>([]);
 
   // Função para solicitar a lista de produtos no carrinho
   const requestCartProducts = () => {

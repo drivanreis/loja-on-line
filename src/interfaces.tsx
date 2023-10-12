@@ -1,8 +1,8 @@
-import { CartProductType } from './types';
+import { TipodeCartaoProduto } from './types';
 
 export interface IShoppingCartUtils {
-  getShoppingCartList(): CartProductType[];
-  addCartProduct(product: CartProductType): void;
+  getShoppingCartList(): TipodeCartaoProduto[];
+  addCartProduct(product: TipodeCartaoProduto): void;
   removeCartProduct(productID: string): void;
   incrementCartItem(productID: string): void;
   decrementCartItem(productID: string): void;

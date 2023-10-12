@@ -1,3 +1,4 @@
+// Requisito 01 - Inicio
 // Função para obter categorias do Mercado Livre
 async function getCategories() {
   const response = await fetch('https://api.mercadolibre.com/sites/MLB/categories');
@@ -16,6 +17,7 @@ async function getProductsFromCategoryAndQuery(categoryId?: string, query?: stri
   const data = await response.json(); // Aguarde a conversão da resposta para JSON
   return data;
 }
+// Requisito 01 - Fin
 
 // Função para obter detalhes de um produto por ID
 async function getProductById(id: string) {

@@ -1,15 +1,15 @@
 import React, { useContext } from 'react';
-import { CartProductType } from '../../types';
-import ShoppingCartContext from '../../contexts/ShoppingCartContext';
+import { TipodeCartaoProduto } from '../../types';
+import ContestoLoja from '../../contexts/ShoppingCartContext';
 
 // Componente que representa um cartão de produto no carrinho de compras
-function ProductCartCard(product: CartProductType) {
+function ProductCartCard(product: TipodeCartaoProduto) {
   // Obtém as funções relacionadas ao carrinho de compras do contexto
   const {
     removeCartProduct,
     decrementCartItem,
     incrementCartItem,
-  } = useContext(ShoppingCartContext);
+  } = useContext(ContestoLoja);
 
   // Extrai os dados do produto do parâmetro
   const { productID, name, image, price, quantity } = product;

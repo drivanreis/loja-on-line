@@ -1,10 +1,37 @@
-#liCard {
+/* Estilo do cartão de produto */
+.itemCartao {
+  background-color: #da6060;
+  padding: 20px;
   border-radius: 5px;
-  box-shadow: 5px 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 250px;
-  margin: 10px;
-  width: 30%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  margin: 10px 10px;
+}
+
+.itemCartao img {
+  max-width: 100%;
+  height: auto;
+}
+
+.itemCartao h3 {
+  margin: 10px 0;
+}
+
+.itemCartao p {
+  font-weight: bold;
+}
+
+/* Estilo do botão "Adicionar ao carrinho" */
+.itemCartao button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.itemCartao button:hover {
+  background-color: #555;
 }

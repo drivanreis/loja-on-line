@@ -1,16 +1,16 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { ProductType } from '../../types';
+import { TipodeProduto } from '../../types';
 import './style.css';
 
-import ShoppingCartContext from '../../contexts/ShoppingCartContext';
+import ContestoLoja from '../../contexts/ShoppingCartContext';
 
 // Componente que representa um cartão de produto
-function ProductCard(product: ProductType & { testid: string }) {
+function ProductCard(product: TipodeProduto & { testid: string }) {
   const { productID, name, image, price, testid = '' } = product;
 
   // Obtém a função addCartProduct do contexto do carrinho de compras
-  const { addCartProduct } = useContext(ShoppingCartContext);
+  const { addCartProduct } = useContext(ContestoLoja);
 
   // Função chamada quando o botão "Adicionar ao carrinho" é clicado
   const handleClick = () => {
@@ -25,7 +25,7 @@ function ProductCard(product: ProductType & { testid: string }) {
   };
 
   return (
-    <li id="liCard" data-testid="product" aria-hidden="true">
+    <li className='itemCartao' data-testid="product" aria-hidden="true">
       {/* Link para a página de detalhes do produto */}
       <Link
         data-testid="product-detail-link"
