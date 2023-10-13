@@ -1,0 +1,10 @@
+.menosMais {
+  background-color: chocolate;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 15px;
+  margin: 0 15px;
+  width: 10%;
+  justify-content: space-around;
+}

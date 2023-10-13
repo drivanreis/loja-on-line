@@ -25,7 +25,7 @@ function ProductCard(product: TipodeProduto & { testid: string }) {
   };
 
   return (
-    <li className='itemCartao' data-testid="product" aria-hidden="true">
+    <li className="itemCartao" data-testid="product" aria-hidden="true">
       {/* Link para a página de detalhes do produto */}
       <Link
         data-testid="product-detail-link"

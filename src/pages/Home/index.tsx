@@ -5,15 +5,12 @@ import CategoriesListSidebar from '../../components/CategoriesListSidebar';
 import CardsList from '../../components/CardsList';
 
 import { getProductsFromCategoryAndQuery } from '../../services/api';
-import { TipodeProduto } from '../../types';
-
-import { TipodePesquisadeProduto } from '../../types';
-
+import { TipodeProduto, TipodePesquisadeProduto } from '../../types';
 
 function Home() {
   // Obtém os parâmetros da URL usando react-router
   const { category, query } = useParams();
-  
+
   // Estado para armazenar os produtos
   const [products, setProducts] = useState<TipodeProduto[]>();
 
@@ -21,10 +18,10 @@ function Home() {
   const searchProducts = async () => {
     // Converte 'all' em undefined para buscar todos os produtos
     const categoryValue = category === 'all' ? undefined : category;
-    
+
     // Chama a API para obter os produtos
     const { results } = await getProductsFromCategoryAndQuery(categoryValue, query);
-    
+
     // Mapeia os resultados para o formato desejado
     const productsSearch = results.map(({
       id: productID,
@@ -36,7 +33,7 @@ function Home() {
     // Atualiza o estado com os produtos encontrados
     setProducts(productsSearch);
   };
-  
+
   // Requisito 02 - Inicio
   // Mensagem inicial quando nenhum termo de pesquisa foi inserido
   const msgInicial = (
@@ -47,7 +44,7 @@ function Home() {
   // Requisito 02 - Fim
 
   // Mensagem para exibir quando nenhum produto foi encontrado
-  const msgNadaEncontrado = <p>Nenhum produto encontrado</p>;
+  const msgNadaEncontrado = <p>Nenhum produto foi encontrado</p>;
 
   // Determina qual mensagem exibir com base na categoria
   const message = category ? msgNadaEncontrado : msgInicial;
@@ -61,13 +58,13 @@ function Home() {
     <>
       {/* Barra lateral com lista de categorias */}
       <CategoriesListSidebar />
-      
+
       {/* Se não houver produtos, exibe a mensagem apropriada, caso contrário, exibe a lista de cartões de produtos */}
       <section>
         {!products?.length ? (
           message
         ) : (
-          <CardsList products={products} />
+          <CardsList products={ products } />
         )}
       </section>
     </>

@@ -44,7 +44,8 @@ const fun05 = (productID: string, quantityUpdate: number) => {
   shoppingCartList[productIndex] = productSelected;
   setListaLoja(shoppingCartList);
 
-  // Recarrega a página para refletir a alteração
+  // Recarrega a página para refletir a alteração.
+  // Mas acho que isso não esta legal!!!
   window.location.reload();
 };
 
@@ -60,7 +61,7 @@ export default function shoppingCartUtils(): ShoppingCartUtils {
 
   const editQuantidadeItem = fun05;
 
-  const incrementCartItem = (productID: string) => editQuantidadeItem(productID, 1);
+  const incrementCartItem = (productID: string) => editQuantidadeItem(productID, +1);
   const decrementCartItem = (productID: string) => editQuantidadeItem(productID, -1);
 
   return {

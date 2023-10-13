@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { TipodeCartaoProduto } from '../../types';
 import ContestoLoja from '../../contexts/ShoppingCartContext';
+import './style.css';
 
 // Componente que representa um cartão de produto no carrinho de compras
 function ProductCartCard(product: TipodeCartaoProduto) {
@@ -26,25 +27,27 @@ function ProductCartCard(product: TipodeCartaoProduto) {
   return (
     <section>
       {/* Botão para remover o produto do carrinho */}
-      <button data-testid="remove-product" onClick={ handleRemoveClick }>X</button>
+      <button data-testid="remove-product" onClick={ handleRemoveClick }>X☠️X </button>
       <img src={ image } alt={ name } />
       <h2 data-testid="shopping-cart-product-name">{name}</h2>
-      <div>
+      <div className="menosMais">
         {/* Botão para decrementar a quantidade */}
         <button
           data-testid="product-decrease-quantity"
           onClick={ handleDecrementClick }
         >
-          -
+          -➖
         </button>
         {/* Exibe a quantidade do produto no carrinho */}
+
         <p data-testid="shopping-cart-product-quantity">{quantity}</p>
+
         {/* Botão para incrementar a quantidade */}
         <button
           data-testid="product-increase-quantity"
           onClick={ handleIncrementClick }
         >
-          +
+          +➕
         </button>
       </div>
       {/* Exibe o preço total do produto */}

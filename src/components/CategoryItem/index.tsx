@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { TipodeCategoria } from '../../types';
 
-import './style.css'
+import './style.css';
 
 // Props esperadas pelo componente CategoryItem
 type CategoryItemProps = {
@@ -23,13 +23,13 @@ function CategoryItem({ category, setSelectedCategoryId }: CategoryItemProps) {
   const handleChange = () => {
     // Chama a função setSelectedCategoryId para definir a categoria selecionada
     setSelectedCategoryId(id);
-    
+
     // Navega para a página de pesquisa com a categoria e a consulta na URL
     navigate(`/search/${id}/${query}`);
   };
 
   return (
-    <li className='itemCategoria'>
+    <li className="itemCategoria">
       {/* Input de tipo rádio para seleção da categoria */}
       <input
         type="radio"
@@ -38,7 +38,7 @@ function CategoryItem({ category, setSelectedCategoryId }: CategoryItemProps) {
         id={ id }
         onChange={ handleChange }
       />
-      
+
       {/* Rótulo (label) da categoria */}
       <label
         aria-hidden="true"

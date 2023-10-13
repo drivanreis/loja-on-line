@@ -22,7 +22,7 @@ function SearchBar() {
         onChange={ handleChange }
         placeholder="Digite algum termo de pesquisa"
       />
-      
+
       {/* Link que leva para a página de pesquisa com o termo de pesquisa */}
       <Link to={ `/search/all/${searchValue}` } data-testid="query-button">Buscar</Link>
     </div>
