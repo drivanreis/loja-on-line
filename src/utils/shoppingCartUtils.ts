@@ -23,13 +23,14 @@ const fun03 = (product: TipodeCartaoProduto) => {
 
 const fun04 = (productID: string) => {
   // Remove um produto da lista do carrinho
-  const shoppingCartList = fun01();
-  const shoppingCartListWithoutProductSelected = shoppingCartList
+  const lojaCartList = fun01();
+  const shoppingCartListWithoutProductSelected = lojaCartList
     .filter(({ productID: id }) => id !== productID);
   setListaLoja(shoppingCartListWithoutProductSelected);
 
-  // Recarrega a página para refletir a alteração
-  window.location.reload();
+  // Recarrega a página para refletir as alterações, funciona.
+  // Mas não acho legal. É muito "grosseiro". E não esta passando no teste.
+  // window.location.reload();
 };
 
 const fun05 = (productID: string, quantityUpdate: number) => {
@@ -44,9 +45,9 @@ const fun05 = (productID: string, quantityUpdate: number) => {
   shoppingCartList[productIndex] = productSelected;
   setListaLoja(shoppingCartList);
 
-  // Recarrega a página para refletir a alteração.
-  // Mas acho que isso não esta legal!!!
-  window.location.reload();
+  // Recarrega a página para refletir as alterações, funciona.
+  // Mas não acho legal. É muito "grosseiro". E não esta passando no teste.
+  // window.location.reload();
 };
 
 // Função utilitária que retorna um objeto com funcionalidades do carrinho de compras

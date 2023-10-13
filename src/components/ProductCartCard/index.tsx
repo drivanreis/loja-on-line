@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { TipodeCartaoProduto } from '../../types';
 import ContestoLoja from '../../contexts/ShoppingCartContext';
 import './style.css';
@@ -13,16 +13,24 @@ function ProductCartCard(product: TipodeCartaoProduto) {
   } = useContext(ContestoLoja);
 
   // Extrai os dados do produto do parâmetro
-  const { productID, name, image, price, quantity } = product;
+  const { productID, name, image, price, quantity: initialQuantity } = product;
+
+  const [quantity, setQuantity] = useState(initialQuantity);
 
   // Função chamada quando o botão "Remover" é clicado
   const handleRemoveClick = () => removeCartProduct(productID);
 
   // Função chamada quando o botão "-" é clicado para decrementar a quantidade
-  const handleDecrementClick = () => decrementCartItem(productID);
+  const handleDecrementClick = () => {
+    decrementCartItem(productID);
+    setQuantity((prevQuantity) => prevQuantity - 1);
+  };
 
   // Função chamada quando o botão "+" é clicado para incrementar a quantidade
-  const handleIncrementClick = () => incrementCartItem(productID);
+  const handleIncrementClick = () => {
+    incrementCartItem(productID);
+    setQuantity((prevQuantity) => prevQuantity + 1);
+  };
 
   return (
     <section>

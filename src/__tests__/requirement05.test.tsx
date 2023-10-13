@@ -25,7 +25,7 @@ describe(`5 - Liste os produtos buscados por termos, com os dados resumidos, ass
     userEvent.clear(screen.getByTestId('query-input'));
 
     userEvent.click(screen.getByTestId('query-button'));
-    
+
     await waitFor(() => expect(screen.getByText('Nenhum produto foi encontrado')).toBeInTheDocument());
   })
   
