@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import ProductCard from '../../components/ProductCard';
+import ProductCard from '../../components/ItemListaProdutos';
 
 import { getProductById } from '../../services/api';
 

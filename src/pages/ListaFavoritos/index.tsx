@@ -5,7 +5,7 @@ import { TipodeCartaoProduto } from '../../types';
 
 import ContestoLoja from '../../contexts/ShoppingCartContext';
 
-import ProductCartCard from '../../components/ProductCartCard';
+import ProductCartCard from '../../components/ItemFavorito';
 
 function ShoppingCart() {
   // Obtém a função getShoppingCartList do contexto ShoppingCartContext

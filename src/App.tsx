@@ -3,8 +3,8 @@ import { Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
 
 import Home from './pages/Home';
-import ShoppingCart from './pages/ShoppingCart';
-import ProductDetails from './pages/ProductDetails';
+import ShoppingCart from './pages/ListaFavoritos';
+import ProductDetails from './pages/DetalhesProduto';
 
 import shoppingCartUtils from './utils/shoppingCartUtils';
 

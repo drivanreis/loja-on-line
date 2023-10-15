@@ -1,4 +1,4 @@
-import { TipodeCartaoProduto, ShoppingCartUtils } from '../types';
+import { TipodeCartaoProduto, LojaCardUtils } from '../types';
 
 const fun01 = (): TipodeCartaoProduto[] => {
   // Obtém a lista de produtos do carrinho do armazenamento local
@@ -16,17 +16,17 @@ const setListaLoja = (shoppingCartList: TipodeCartaoProduto[]) => {
 
 const fun03 = (product: TipodeCartaoProduto) => {
   // Adiciona um produto à lista do carrinho
-  const shoppingCartList = fun01();
-  shoppingCartList.push(product);
-  setListaLoja(shoppingCartList);
+  const cardListdaLoja = fun01();
+  cardListdaLoja.push(product);
+  setListaLoja(cardListdaLoja);
 };
 
 const fun04 = (productID: string) => {
   // Remove um produto da lista do carrinho
   const lojaCartList = fun01();
-  const shoppingCartListWithoutProductSelected = lojaCartList
+  const cardListDaLojaSemProdutoSelecionado = lojaCartList
     .filter(({ productID: id }) => id !== productID);
-  setListaLoja(shoppingCartListWithoutProductSelected);
+  setListaLoja(cardListDaLojaSemProdutoSelecionado);
 
   // Recarrega a página para refletir as alterações, funciona.
   // Mas não acho legal. É muito "grosseiro". E não esta passando no teste.
@@ -35,15 +35,15 @@ const fun04 = (productID: string) => {
 
 const fun05 = (productID: string, quantityUpdate: number) => {
   // Edita a quantidade de um item no carrinho
-  const shoppingCartList = fun01();
-  const productIndex = shoppingCartList
+  const cardListdaLoja = fun01();
+  const productIndex = cardListdaLoja
     .findIndex(({ productID: id }) => id === productID);
-  const productSelected = shoppingCartList[productIndex];
+  const produtoSelecionado = cardListdaLoja[productIndex];
 
-  if (productSelected.quantity === 1 && quantityUpdate < 0) return;
-  productSelected.quantity += quantityUpdate;
-  shoppingCartList[productIndex] = productSelected;
-  setListaLoja(shoppingCartList);
+  if (produtoSelecionado.quantity === 1 && quantityUpdate < 0) return;
+  produtoSelecionado.quantity += quantityUpdate;
+  cardListdaLoja[productIndex] = produtoSelecionado;
+  setListaLoja(cardListdaLoja);
 
   // Recarrega a página para refletir as alterações, funciona.
   // Mas não acho legal. É muito "grosseiro". E não esta passando no teste.
@@ -51,7 +51,7 @@ const fun05 = (productID: string, quantityUpdate: number) => {
 };
 
 // Função utilitária que retorna um objeto com funcionalidades do carrinho de compras
-export default function shoppingCartUtils(): ShoppingCartUtils {
+export default function shoppingCartUtils(): LojaCardUtils {
   const pegaListaLoja = fun01;
 
   // const setShoppingCartList = fun02;

@@ -1,13 +1,14 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 
-import SearchBar from '../SearchBar';
+import SearchBar from '../BarraPesquisa';
 import Logo from '../Logo';
-import ShoppingCartLink from '../ShoppingCartLink';
+import ShoppingCartLink from '../EntraCarro';
 
 import './style.css';
 
 // O componente Layout define a estrutura básica da página
+// É um saco plastico, que assume a forma do que agente bota dentro.
 function Layout() {
   return (
     <>

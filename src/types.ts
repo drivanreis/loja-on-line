@@ -21,7 +21,7 @@ export type TipodePesquisadeProduto = {
 };
 
 // Defina um tipo que represente as funcionalidades do carrinho de compras
-export type ShoppingCartUtils = {
+export type LojaCardUtils = {
   getShoppingCartList: () => TipodeCartaoProduto[];
   addCartProduct: (product: TipodeCartaoProduto) => void;
   removeCartProduct: (productID: string) => void;

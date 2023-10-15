@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getCategories } from '../../services/api';
-import CategoryItem from '../CategoryItem';
+import CategoryItem from '../ItemsListaCategBaraLateral';
 import { TipodeCategoria } from '../../types';
 import './style.css';
 

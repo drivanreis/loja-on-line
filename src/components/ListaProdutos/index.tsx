@@ -1,4 +1,4 @@
-import ProductCard from '../ProductCard';
+import ProductCard from '../ItemListaProdutos';
 import { TipodeProduto } from '../../types';
 import './style.css';
 

@@ -1,8 +1,11 @@
+// A pagina principal e/ou Começo não é bom trocar...
+// Mas se o
+
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import CategoriesListSidebar from '../../components/CategoriesListSidebar';
-import CardsList from '../../components/CardsList';
+import CategoriesListSidebar from '../../components/ListaCategoriaBaraLateral';
+import CardsList from '../../components/ListaProdutos';
 
 import { getProductsFromCategoryAndQuery } from '../../services/api';
 import { TipodeProduto, TipodePesquisadeProduto } from '../../types';
